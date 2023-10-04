@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 769f5f9e085f958448a9a9574ce54428
+guid: 35ca7e2c99925d94a9a0917a38ede24b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,11 +123,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: elemental-spritesheet_0
+      name: AirMan_Sprites_0
       rect:
         serializedVersion: 2
-        x: 217
-        y: 552
+        x: 2
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -137,18 +137,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51ce665091827984a8580f8777ba4ecd
-      internalID: -1859271283
+      spriteID: 439e935d0f94b93439e6187dbde661cb
+      internalID: -204049488
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: elemental-spritesheet_1
+      name: AirMan_Sprites_1
       rect:
         serializedVersion: 2
-        x: 236
-        y: 552
+        x: 17
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -158,18 +158,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f08df8f53a745048b07c7b83fec5231
-      internalID: -651406365
+      spriteID: bf5e51475a3c2ac4083583495851c0e2
+      internalID: 877248175
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: elemental-spritesheet_2
+      name: AirMan_Sprites_2
       rect:
         serializedVersion: 2
-        x: 217
-        y: 534
+        x: 34
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -179,18 +179,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97b63724b4ff1d1409d5c070198aeb66
-      internalID: -2035856801
+      spriteID: 568c3be4ea7094941b95f63b8effc5c7
+      internalID: -809890398
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: elemental-spritesheet_3
+      name: AirMan_Sprites_3
       rect:
         serializedVersion: 2
-        x: 236
-        y: 534
+        x: 50
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -200,8 +200,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e206899681398e438f9170adf90af24
-      internalID: -151230156
+      spriteID: 0c0770f348c9e054e8ab944a08adbd39
+      internalID: -1864578766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirMan_Sprites_4
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0739c847b9154e4aae8620a0b663707
+      internalID: 718105798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirMan_Sprites_5
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7f1dc288c247824783d1a40da27fd03
+      internalID: -755682369
       vertices: []
       indices: 
       edges: []
@@ -209,7 +251,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: a22804139f1241445bce58fcb69cebfb
+    spriteID: 3d3429a1a2789484d8dd708183e99743
     internalID: 0
     vertices: []
     indices: 
@@ -217,10 +259,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      elemental-spritesheet_0: -1859271283
-      elemental-spritesheet_1: -651406365
-      elemental-spritesheet_2: -2035856801
-      elemental-spritesheet_3: -151230156
+      AirMan_Sprites_0: -204049488
+      AirMan_Sprites_1: 877248175
+      AirMan_Sprites_2: -809890398
+      AirMan_Sprites_3: -1864578766
+      AirMan_Sprites_4: 718105798
+      AirMan_Sprites_5: -755682369
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
