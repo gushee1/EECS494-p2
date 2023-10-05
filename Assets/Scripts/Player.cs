@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     private PlayerAbility ability;
     private SpriteRenderer player_sprite;
     private Animator player_animator;
+    private PlayerManager player_manager;
+    private Camera player_cam;
 
     public Sprite facing_down;
     public Sprite facing_up;
@@ -16,6 +18,7 @@ public class Player : MonoBehaviour
 
     private float player_speed = 2;
     private bool has_key = false;
+    [SerializeField] private bool is_active = false;
 
     public enum Direction
     {
@@ -31,23 +34,33 @@ public class Player : MonoBehaviour
         ability = GetComponent<PlayerAbility>();
         player_sprite = GetComponent<SpriteRenderer>();
         player_animator = GetComponent<Animator>();
+        player_manager = GetComponentInParent<PlayerManager>();
+        player_cam = GetComponentInChildren<Camera>();
+
+        player_cam.enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Move();
-
-        UpdateVisuals();
-
-        if (Input.GetKeyDown(KeyCode.X))
+        if (is_active)
         {
-            ability.Activate();
-        }
+            Move();
 
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            TogglePlayer();
+            UpdateVisuals();
+
+            if (Input.GetKeyDown(KeyCode.X))
+            {
+                ability.Activate();
+            }
+
+            //TODO: potential issue is that as soon as player is activated in captures keycode down
+
+            if (Input.GetKeyDown(KeyCode.Z))
+            {
+                Debug.Log(gameObject.name + " did this");
+                player_manager.SwitchPlayer();
+            }
         }
     }
 
@@ -90,11 +103,6 @@ public class Player : MonoBehaviour
         rb.velocity = new Vector3(horizontal_movement, vertical_movement) * player_speed;
     }
 
-    void TogglePlayer()
-    {
-
-    }
-
     void UpdateVisuals()
     {
         //TODO: fix sprite orientation when not moving
@@ -132,5 +140,17 @@ public class Player : MonoBehaviour
     public bool HasKey()
     {
         return has_key;
+    }
+
+    public void ActivateSelf()
+    {
+        player_cam.enabled = true;
+        is_active = true;
+    }
+
+    public void DeactivateSelf()
+    {
+        player_cam.enabled = false;
+        is_active = false;
     }
 }
