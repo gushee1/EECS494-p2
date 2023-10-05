@@ -24,5 +24,9 @@ public class Water : MonoBehaviour
             //TODO: play sizzle sound
             Destroy(other.gameObject);
         }
+        else if (other.GetComponent<Player>() == null)
+        {
+            Destroy(gameObject);
+        }    
     }
 }

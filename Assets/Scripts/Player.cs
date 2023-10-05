@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     private float player_speed = 2;
     private bool has_key = false;
     [SerializeField] private bool is_active = false;
+    private bool just_activated = false;
 
     public enum Direction
     {
@@ -43,6 +44,14 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //This chunk accounts for switching within one frame
+        if (just_activated)
+        {
+            is_active = true;
+            just_activated = false;
+            return;
+        }
+
         if (is_active)
         {
             Move();
@@ -145,7 +154,7 @@ public class Player : MonoBehaviour
     public void ActivateSelf()
     {
         player_cam.enabled = true;
-        is_active = true;
+        just_activated = true;
     }
 
     public void DeactivateSelf()

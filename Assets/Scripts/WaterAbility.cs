@@ -22,32 +22,31 @@ public class WaterAbility : PlayerAbility
 
     public override void Activate()
     {
-        GameObject water_instance_1 = Instantiate(water);
-        GameObject water_instance_2 = Instantiate(water);
+        GameObject water_instance = Instantiate(water);
 
         //TODO: handle rotating water sprite based on player orientation
+        //TODO: make more like a projectile
 
         switch (player.direction_facing)
         {
             case Player.Direction.left:
-                water_instance_1.transform.position = new Vector3(transform.position.x - 1, transform.position.y);
-                water_instance_2.transform.position = new Vector3(transform.position.x - 2, transform.position.y);
+                water_instance.transform.position = new Vector3(transform.position.x - .5f, transform.position.y);
+                water_instance.GetComponent<Rigidbody>().velocity = new Vector3(-3, 0, 0);
                 break;
             case Player.Direction.right:
-                water_instance_1.transform.position = new Vector3(transform.position.x + 1, transform.position.y);
-                water_instance_2.transform.position = new Vector3(transform.position.x + 2, transform.position.y);
+                water_instance.transform.position = new Vector3(transform.position.x + .5f, transform.position.y);
+                water_instance.GetComponent<Rigidbody>().velocity = new Vector3(3, 0, 0);
                 break;
             case Player.Direction.up:
-                water_instance_1.transform.position = new Vector3(transform.position.x, transform.position.y + 1);
-                water_instance_2.transform.position = new Vector3(transform.position.x, transform.position.y + 2);
+                water_instance.transform.position = new Vector3(transform.position.x, transform.position.y + .5f);
+                water_instance.GetComponent<Rigidbody>().velocity = new Vector3(0, 3, 0);
                 break;
             case Player.Direction.down:
-                water_instance_1.transform.position = new Vector3(transform.position.x, transform.position.y - 1);
-                water_instance_2.transform.position = new Vector3(transform.position.x, transform.position.y - 2);
+                water_instance.transform.position = new Vector3(transform.position.x, transform.position.y - .5f);
+                water_instance.GetComponent<Rigidbody>().velocity = new Vector3(0, -3, 0);
                 break;
             default:
-                water_instance_1.transform.position = transform.position;
-                water_instance_2.transform.position = transform.position;
+                water_instance.transform.position = transform.position;
                 break;
         }
     }

@@ -26,11 +26,11 @@ public class PlayerManager : MonoBehaviour
 
     public void SwitchPlayer()
     {
-        Debug.Log("switching");
+        //Debug.Log("switching");
         players[current_player].DeactivateSelf();
         current_player++;
         current_player %= players.Length;
         players[current_player].ActivateSelf();
-        Debug.Log(players[current_player].gameObject.name);
+        //Debug.Log(players[current_player].gameObject.name);
     }
 }

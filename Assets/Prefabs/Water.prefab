@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2263548271275267212}
   - component: {fileID: 4571177417009750363}
   - component: {fileID: -805008666499550564}
+  - component: {fileID: 3829017499325639356}
   m_Layer: 0
   m_Name: Water
   m_TagString: Untagged
@@ -132,4 +133,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76d3c3f4988c7304eb85cf7a3d6f4899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroy_time: 1
+  destroy_time: 0.5
+--- !u!54 &3829017499325639356
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8611257403031947176}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
