@@ -29,15 +29,32 @@ public class Fire : MonoBehaviour
                 //Debug.Log("above object is burnable");
                 Destroy(overlapping_colliders[i].gameObject, 1f);
             }
+            else if (overlapping_colliders[i].GetComponent<TorchTrigger>() != null)
+            {
+                overlapping_colliders[i].GetComponent<TorchTrigger>().ActivateTrigger();
+            }
         }
     }
+
 
     private void OnTriggerEnter(Collider other)
     {
         //Debug.Log(other.name);
         if (other.GetComponent<Player>() != null)
         {
-            //TODO: reset scene
+            StartCoroutine(other.GetComponent<Player>().Die());
+        }
+        else if(other.GetComponent<TorchTrigger>() != null)
+        {
+            other.GetComponent<TorchTrigger>().ActivateTrigger();
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.GetComponent<Player>() != null)
+        {
+            StartCoroutine(collision.gameObject.GetComponent<Player>().Die());
         }
     }
 }

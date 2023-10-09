@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7322528918037229491}
   - component: {fileID: 8666472395628842929}
   - component: {fileID: 461628325841707021}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AirMan
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -97,14 +97,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1272753917031460874}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f88bfaf418ec793419b1a9494e29bb3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  facing_down: {fileID: 0}
-  facing_up: {fileID: 0}
-  facing_side: {fileID: 0}
+  player_cam: {fileID: 818513470326162155}
+  facing_down: {fileID: -204049488, guid: 35ca7e2c99925d94a9a0917a38ede24b, type: 3}
+  facing_up: {fileID: -809890398, guid: 35ca7e2c99925d94a9a0917a38ede24b, type: 3}
+  facing_side: {fileID: 718105798, guid: 35ca7e2c99925d94a9a0917a38ede24b, type: 3}
+  dead: {fileID: -1551293753, guid: 544ff652656674f43979450071ec6fd5, type: 3}
+  is_active: 0
   direction_facing: 3
 --- !u!54 &5143914034479511914
 Rigidbody:
@@ -168,6 +171,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c1043aeb256a21468d6028ed18619fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  air: {fileID: 1445156988196430849, guid: 2fef2f46b5a436d42905379b88740f80, type: 3}
+  fire: {fileID: 1738514820807944955, guid: 3c805f8f7dfae25408b2648a168093f7, type: 3}
 --- !u!95 &461628325841707021
 Animator:
   serializedVersion: 5
@@ -199,14 +204,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4629671441231722599}
   - component: {fileID: 818513470326162155}
-  - component: {fileID: 2126853333450537473}
-  m_Layer: 0
-  m_Name: Main Camera
+  m_Layer: 6
+  m_Name: AirMan Cam
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4629671441231722599
 Transform:
   m_ObjectHideFlags: 0
@@ -273,11 +277,3 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &2126853333450537473
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8029559250388120003}
-  m_Enabled: 1

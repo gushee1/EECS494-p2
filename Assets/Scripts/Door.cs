@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
+    private Collider door_collider;
+
+    public PlayerManager player_manager;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        door_collider = GetComponent<Collider>();
     }
 
     // Update is called once per frame
@@ -22,7 +26,7 @@ public class Door : MonoBehaviour
         {
             if (collision.gameObject.GetComponent<Player>().HasKey())
             {
-                Destroy(gameObject);
+                door_collider.isTrigger = true;
             }
             else
             {
@@ -35,10 +39,7 @@ public class Door : MonoBehaviour
     {
         if (other.GetComponent<Player>() != null)
         {
-            if (other.GetComponent<Player>().HasKey())
-            {
-                Destroy(gameObject);
-            }
+            player_manager.PlayerCompletedLevel();
         }
     }
 }

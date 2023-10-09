@@ -16,6 +16,8 @@ public class Water : MonoBehaviour
         
     }
 
+
+    //known bug: TODO: water can take out lava
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<Fire>())

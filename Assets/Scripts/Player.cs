@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Player : MonoBehaviour
@@ -10,13 +11,15 @@ public class Player : MonoBehaviour
     private SpriteRenderer player_sprite;
     private Animator player_animator;
     private PlayerManager player_manager;
-    private Camera player_cam;
+    private Collider player_collider;
+    public Camera player_cam;
 
     public Sprite facing_down;
     public Sprite facing_up;
     public Sprite facing_side;
+    public Sprite dead;
 
-    private float player_speed = 2;
+    private float player_speed = 3;
     private bool has_key = false;
     [SerializeField] private bool is_active = false;
     private bool just_activated = false;
@@ -37,6 +40,7 @@ public class Player : MonoBehaviour
         player_animator = GetComponent<Animator>();
         player_manager = GetComponentInParent<PlayerManager>();
         player_cam = GetComponentInChildren<Camera>();
+        player_collider = GetComponent<Collider>();
 
         player_cam.enabled = false;
     }
@@ -54,9 +58,12 @@ public class Player : MonoBehaviour
 
         if (is_active)
         {
-            Move();
+            if(!(GetComponent<EarthAbility>() != null && GetComponent<EarthAbility>().IsActive()))
+            {
+                Move();
 
-            UpdateVisuals();
+                UpdateVisuals();
+            }
 
             if (Input.GetKeyDown(KeyCode.X))
             {
@@ -67,7 +74,7 @@ public class Player : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Z))
             {
-                Debug.Log(gameObject.name + " did this");
+                //Debug.Log(gameObject.name + " did this");
                 player_manager.SwitchPlayer();
             }
         }
@@ -102,11 +109,18 @@ public class Player : MonoBehaviour
         if (horizontal_movement != 0 || vertical_movement != 0)
         {
             //Debug.Log(new Vector3(horizontal_movement, vertical_movement));
+            player_animator.enabled = true;
             player_animator.SetBool("moving", true);
+
+            if (GetComponent<AirAbility>() != null)
+            {
+                GetComponent<AirAbility>().Deactivate();
+            }
         }
         else
         {
             player_animator.SetBool("moving", false);
+            player_animator.enabled = false;
         }
 
         rb.velocity = new Vector3(horizontal_movement, vertical_movement) * player_speed;
@@ -161,5 +175,21 @@ public class Player : MonoBehaviour
     {
         player_cam.enabled = false;
         is_active = false;
+    }
+
+    public IEnumerator Die()
+    {
+        is_active = false;
+        rb.velocity = Vector3.zero;
+        player_animator.SetBool("moving", false);
+        player_animator.enabled = false;
+        player_collider.enabled = false;
+        player_sprite.sprite = dead;
+
+        yield return new WaitForSeconds(1f);
+
+        Debug.Log("huh");
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

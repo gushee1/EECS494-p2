@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7839290862790226225}
   - component: {fileID: 3910023792885860294}
   - component: {fileID: 6680391065409531097}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EarthMan
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -97,14 +97,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1325096190614241318}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f88bfaf418ec793419b1a9494e29bb3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  facing_down: {fileID: 0}
-  facing_up: {fileID: 0}
-  facing_side: {fileID: 0}
+  player_cam: {fileID: 6383795751862378414}
+  facing_down: {fileID: 2046071219, guid: a2d1491112644ed4c940d1df5b406e1e, type: 3}
+  facing_up: {fileID: 1014106429, guid: a2d1491112644ed4c940d1df5b406e1e, type: 3}
+  facing_side: {fileID: 2107707421, guid: a2d1491112644ed4c940d1df5b406e1e, type: 3}
+  dead: {fileID: -1551293753, guid: 544ff652656674f43979450071ec6fd5, type: 3}
+  is_active: 0
   direction_facing: 3
 --- !u!54 &282981984719780504
 Rigidbody:
@@ -199,14 +202,13 @@ GameObject:
   m_Component:
   - component: {fileID: 7725024008311979699}
   - component: {fileID: 6383795751862378414}
-  - component: {fileID: 1260268778704949884}
-  m_Layer: 0
-  m_Name: Main Camera
+  m_Layer: 6
+  m_Name: EarthMan Cam
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7725024008311979699
 Transform:
   m_ObjectHideFlags: 0
@@ -273,11 +275,3 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &1260268778704949884
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3534800867235718393}
-  m_Enabled: 1
