@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0c4d7a15aae28544f8d7def96871af89
+guid: a9f63afc6c88dd84cbd84c26291028b7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,22 +123,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Custom Edited - Castlevania Customs - Torch_0
+      name: water_atttack_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 151
-        width: 15
-        height: 12
-      alignment: 9
-      pivot: {x: 0.5, y: 0.6666667}
+        x: 293
+        y: 12
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c14ff2d43b29734b8d8f4d0ab097f9d
-      internalID: -673481400
+      spriteID: 09b6fafa32e14cf479842c2749ade6cb
+      internalID: 1783132500
       vertices: []
       indices: 
       edges: []
@@ -146,7 +146,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 4ed2f71316a1d6b4581d6cc0a8c3009f
+    spriteID: d3bd6f8a4b3bc9a4eb26d47f5376275d
     internalID: 0
     vertices: []
     indices: 
@@ -154,7 +154,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Custom Edited - Castlevania Customs - Torch_0: -673481400
+      water_atttack_0: 1783132500
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

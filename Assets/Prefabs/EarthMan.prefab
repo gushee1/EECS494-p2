@@ -107,6 +107,7 @@ MonoBehaviour:
   facing_up: {fileID: 1014106429, guid: a2d1491112644ed4c940d1df5b406e1e, type: 3}
   facing_side: {fileID: 2107707421, guid: a2d1491112644ed4c940d1df5b406e1e, type: 3}
   dead: {fileID: -1551293753, guid: 544ff652656674f43979450071ec6fd5, type: 3}
+  player_id: 3
   is_active: 0
   direction_facing: 3
 --- !u!54 &282981984719780504
@@ -155,10 +156,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.32316208
   m_Height: 1
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.009558678, y: 0, z: 0}
 --- !u!114 &3910023792885860294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,6 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b27d10949c33d0b40b403b6068b9f65b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  earth_sprite: {fileID: 2122461709, guid: ec37c4341e1b56448a3de0e0f6e564b5, type: 3}
 --- !u!95 &6680391065409531097
 Animator:
   serializedVersion: 5

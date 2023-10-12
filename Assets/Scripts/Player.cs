@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Player : MonoBehaviour
@@ -18,6 +19,10 @@ public class Player : MonoBehaviour
     public Sprite facing_up;
     public Sprite facing_side;
     public Sprite dead;
+
+    public int player_id;
+
+    Subscription<PlayerDiedEvent> player_died_subscription;
 
     private float player_speed = 3;
     private bool has_key = false;
@@ -41,6 +46,8 @@ public class Player : MonoBehaviour
         player_manager = GetComponentInParent<PlayerManager>();
         player_cam = GetComponentInChildren<Camera>();
         player_collider = GetComponent<Collider>();
+
+        player_died_subscription = EventBus.Subscribe<PlayerDiedEvent>(_OnPlayerDied);
 
         player_cam.enabled = false;
     }
@@ -169,12 +176,23 @@ public class Player : MonoBehaviour
     {
         player_cam.enabled = true;
         just_activated = true;
+        player_animator.enabled = true;
     }
 
     public void DeactivateSelf()
     {
         player_cam.enabled = false;
+        player_animator.enabled = false;
+        rb.velocity = Vector3.zero;
         is_active = false;
+    }
+
+    void _OnPlayerDied(PlayerDiedEvent e)
+    {
+        if(e.player_id == player_id)
+        {
+            StartCoroutine(Die());
+        }
     }
 
     public IEnumerator Die()

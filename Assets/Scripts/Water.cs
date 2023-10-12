@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class Water : MonoBehaviour
 {
+    private Rigidbody rb;
+
+    private float fire_speed = 3f;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
+
+        rb.velocity = transform.up * fire_speed;
     }
 
     // Update is called once per frame

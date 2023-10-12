@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7f70839579b189049b17b26efeddc313
+guid: 71238f6b2c459a44994a73083a5a6aca
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,22 +123,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Saturn - Nanatsu Kaze no Shima Monogatari JPN - Blue Wind_0
+      name: torch_0
       rect:
         serializedVersion: 2
-        x: 290
-        y: 10
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 8
+        y: 151
+        width: 15
+        height: 12
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6666667}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8bf9b7beb60110f459d39e37f597e6c1
-      internalID: -271611195
+      spriteID: 4fb7ea0de8a9deb41a8d1600d76d9b77
+      internalID: 1361865370
       vertices: []
       indices: 
       edges: []
@@ -146,7 +146,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 1a57ffffebd146d4d81f0219e266d974
+    spriteID: 5c98d1ce59e38cb4fa9cc2bfd7a604cf
     internalID: 0
     vertices: []
     indices: 
@@ -154,7 +154,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Saturn - Nanatsu Kaze no Shima Monogatari JPN - Blue Wind_0: -271611195
+      torch_0: 1361865370
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

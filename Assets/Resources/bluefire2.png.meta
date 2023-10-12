@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: aa17370f28817e74f8bb58294bf1c364
+guid: fce2eb37197f1524b841c547635eb11a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NES - Mega Man Metal Army Hack - Fire Man_0
+      name: bluefire2_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,41 +131,20 @@ TextureImporter:
         width: 12
         height: 8
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2163044e35423034aa39e9e5f454ece9
-      internalID: -1615639604
+      spriteID: e0714a641bff91f42b4ef44354a896fb
+      internalID: -1047843440
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NES - Mega Man Metal Army Hack - Fire Man_1
-      rect:
-        serializedVersion: 2
-        x: 14
-        y: 2
-        width: 9
-        height: 4
-      alignment: 9
-      pivot: {x: 0.5, y: -1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 140b737bb570f7c42a8b96783cf3510f
-      internalID: -1577261105
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: NES - Mega Man Metal Army Hack - Fire Man_2
+      name: bluefire2_1
       rect:
         serializedVersion: 2
         x: 13
@@ -173,14 +152,14 @@ TextureImporter:
         width: 10
         height: 7
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54e6cec7fccc8ed41840ec89afaf86db
-      internalID: 629752305
+      spriteID: 1b826d4263d1e9f47a61ddff1d1fac7e
+      internalID: 937729305
       vertices: []
       indices: 
       edges: []
@@ -188,7 +167,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: ecbcd28c95444294f832e6a0069f590a
+    spriteID: c10423def1e965e40b3f9f62a7319620
     internalID: 0
     vertices: []
     indices: 
@@ -196,9 +175,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      NES - Mega Man Metal Army Hack - Fire Man_0: -1615639604
-      NES - Mega Man Metal Army Hack - Fire Man_1: -1577261105
-      NES - Mega Man Metal Army Hack - Fire Man_2: 629752305
+      bluefire2_0: -1047843440
+      bluefire2_1: 937729305
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

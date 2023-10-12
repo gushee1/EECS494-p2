@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6134060895647948750}
   - component: {fileID: 4689545254549441540}
   - component: {fileID: 6811427841266803257}
+  - component: {fileID: 3051291070037899206}
   m_Layer: 0
   m_Name: BlueFire
   m_TagString: Untagged
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1719748491, guid: 7bc3baa8659347043a5738c68636e38a, type: 3}
+  m_Sprite: {fileID: -1047843440, guid: fce2eb37197f1524b841c547635eb11a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -105,8 +106,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.75, y: 1, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.7594169, y: 0.5076898, z: 0.2}
+  m_Center: {x: 0.0026570857, y: -0.00068995357, z: 0}
 --- !u!114 &6811427841266803257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,3 +120,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe5374ff9aa8f0b4da3fcd5f1ecfbdf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &3051291070037899206
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156041007545440665}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a92ef1ed86b817742a20ca1bc0b57387, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

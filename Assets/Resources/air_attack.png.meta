@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 866adc8ae661fd54f8d5958b2fadcf3e
+guid: 675ee53811b96d847b45d820d99e438d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NES - Crystal Mines - Rock Creatures_0
+      name: air_attack_0
       rect:
         serializedVersion: 2
-        x: 96
-        y: 139
+        x: 0
+        y: 149
         width: 16
-        height: 16
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,50 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58ace1af7b36f5e4089edf29a37acbf8
-      internalID: -974944804
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: NES - Crystal Mines - Rock Creatures_1
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 120
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4c85f9a4d6c14134cbeafb9ccdd0b371
-      internalID: 1201918457
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: NES - Crystal Mines - Rock Creatures_2
-      rect:
-        serializedVersion: 2
-        x: 88
-        y: 102
-        width: 14
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 01ac6ed8e30770b4f8f92d824da740f5
-      internalID: -825756783
+      spriteID: 6d4c3cb55e0aae94da20480b35c9d05e
+      internalID: -1813062151
       vertices: []
       indices: 
       edges: []
@@ -188,7 +146,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 57eb87f8d46076446bdbdbd962f0020c
+    spriteID: 2393e886d6752e04f9fe7ab01371df98
     internalID: 0
     vertices: []
     indices: 
@@ -196,9 +154,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      NES - Crystal Mines - Rock Creatures_0: -974944804
-      NES - Crystal Mines - Rock Creatures_1: 1201918457
-      NES - Crystal Mines - Rock Creatures_2: -825756783
+      air_attack_0: -1813062151
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f209028acb873ee40b66a618c2954f9c
+guid: ec37c4341e1b56448a3de0e0f6e564b5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,12 +123,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NES - Fushigi no Umi no Nadia Nadia The Secret of Blue Water JPN - Battle
-        Sprites_0
+      name: earth_man_mode_0
       rect:
         serializedVersion: 2
         x: 96
-        y: 147
+        y: 139
         width: 16
         height: 16
       alignment: 0
@@ -138,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa6821f4d5b6c18469338d3c15cb6d75
-      internalID: 422363504
+      spriteID: f759c5b093b8c104ba8589c78565f68c
+      internalID: 2122461709
       vertices: []
       indices: 
       edges: []
@@ -147,7 +146,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: fe313d64bf9cf6b48bf2980a57a95004
+    spriteID: cd5503b00426c2c4692d82772e74bf51
     internalID: 0
     vertices: []
     indices: 
@@ -155,7 +154,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      NES - Fushigi no Umi no Nadia Nadia The Secret of Blue Water JPN - Battle Sprites_0: 422363504
+      earth_man_mode_0: 2122461709
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

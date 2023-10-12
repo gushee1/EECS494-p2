@@ -11,3 +11,13 @@ public class PlayerFinishedEvent
         num_player_finished = _num_player_finished;
     }
 }
+
+public class PlayerDiedEvent
+{
+    public int player_id;
+
+    public PlayerDiedEvent(int _player_id)
+    {
+        player_id = _player_id;
+    }
+}

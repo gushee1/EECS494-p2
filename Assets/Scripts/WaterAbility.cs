@@ -22,32 +22,31 @@ public class WaterAbility : PlayerAbility
 
     public override void Activate()
     {
-        GameObject water_instance = Instantiate(water);
-
-        //TODO: handle rotating water sprite based on player orientation
-        //TODO: make more like a projectile
+        Quaternion rotation = Quaternion.identity;
+        Vector3 spawn_transform = player.transform.position;
 
         switch (player.direction_facing)
         {
             case Player.Direction.left:
-                water_instance.transform.position = new Vector3(transform.position.x - .5f, transform.position.y);
-                water_instance.GetComponent<Rigidbody>().velocity = new Vector3(-3, 0, 0);
+                spawn_transform = new Vector3(transform.position.x - .5f, transform.position.y);
+                rotation = player.transform.rotation * Quaternion.Euler(0, 0, 90);
                 break;
             case Player.Direction.right:
-                water_instance.transform.position = new Vector3(transform.position.x + .5f, transform.position.y);
-                water_instance.GetComponent<Rigidbody>().velocity = new Vector3(3, 0, 0);
+                spawn_transform = new Vector3(transform.position.x + .5f, transform.position.y);
+                rotation = player.transform.rotation * Quaternion.Euler(0, 0, -90);
                 break;
             case Player.Direction.up:
-                water_instance.transform.position = new Vector3(transform.position.x, transform.position.y + .5f);
-                water_instance.GetComponent<Rigidbody>().velocity = new Vector3(0, 3, 0);
+                spawn_transform = new Vector3(transform.position.x, transform.position.y + .5f);
+                rotation = player.transform.rotation;
                 break;
             case Player.Direction.down:
-                water_instance.transform.position = new Vector3(transform.position.x, transform.position.y - .5f);
-                water_instance.GetComponent<Rigidbody>().velocity = new Vector3(0, -3, 0);
+                spawn_transform = new Vector3(transform.position.x, transform.position.y - .5f);
+                rotation = player.transform.rotation * Quaternion.Euler(0, 0, 180);
                 break;
             default:
-                water_instance.transform.position = transform.position;
                 break;
         }
+
+        Instantiate(water, spawn_transform, rotation);
     }
 }

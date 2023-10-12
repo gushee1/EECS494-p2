@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7bc3baa8659347043a5738c68636e38a
+guid: a617ce9a4d30f9e42b4bb1c5b76bac8a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bluefire_0
+      name: air--fire_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 12
-        height: 16
+        x: 185
+        y: 451
+        width: 14
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 632b638cf654ed449b6cdba7128ca6f8
-      internalID: -1719748491
+      spriteID: 9f1ecf57dcd1ec44c94a276140fdbdd4
+      internalID: 391138368
       vertices: []
       indices: 
       edges: []
@@ -146,7 +146,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 27b9c148245fdaa4bb999c1d446f02e9
+    spriteID: aff6c0dddd9493c41bd6e896f7f09438
     internalID: 0
     vertices: []
     indices: 
@@ -154,7 +154,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      bluefire_0: -1719748491
+      air--fire_0: 391138368
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

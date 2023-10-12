@@ -42,7 +42,7 @@ public class Fire : MonoBehaviour
         //Debug.Log(other.name);
         if (other.GetComponent<Player>() != null)
         {
-            StartCoroutine(other.GetComponent<Player>().Die());
+            EventBus.Publish(new PlayerDiedEvent(other.GetComponent<Player>().player_id));
         }
         else if(other.GetComponent<TorchTrigger>() != null)
         {
@@ -50,11 +50,12 @@ public class Fire : MonoBehaviour
         }
     }
 
+    //TODO: can probably get rid of this and just make the blue fire a trigger as well because i implemented death
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.GetComponent<Player>() != null)
         {
-            StartCoroutine(collision.gameObject.GetComponent<Player>().Die());
+            EventBus.Publish(new PlayerDiedEvent(collision.gameObject.GetComponent<Player>().player_id));
         }
     }
 }

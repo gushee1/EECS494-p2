@@ -107,6 +107,7 @@ MonoBehaviour:
   facing_up: {fileID: 424585854, guid: 86e9eba4e66a09546b18072b09cd1c8c, type: 3}
   facing_side: {fileID: -2100498389, guid: 86e9eba4e66a09546b18072b09cd1c8c, type: 3}
   dead: {fileID: -1551293753, guid: 544ff652656674f43979450071ec6fd5, type: 3}
+  player_id: 1
   is_active: 0
   direction_facing: 3
 --- !u!54 &496394106097805217
@@ -155,10 +156,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.34279764
   m_Height: 1
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: -0.005822301, y: 0, z: 0}
 --- !u!114 &8871245708005535125
 MonoBehaviour:
   m_ObjectHideFlags: 0

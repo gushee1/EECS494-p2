@@ -27,18 +27,15 @@ public class Arrow : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.GetComponent<Player>() != null)
+        if(collision.gameObject.GetComponent<Player>() != null)
         {
-            if(collision.gameObject.GetComponent<EarthAbility>() != null && collision.gameObject.GetComponent<EarthAbility>().IsActive())
+            if (!(collision.gameObject.GetComponent<EarthAbility>() != null && collision.gameObject.GetComponent<EarthAbility>().IsActive()))
             {
-                Destroy(gameObject);
+                EventBus.Publish(new PlayerDiedEvent(collision.gameObject.GetComponent<Player>().player_id));
             }
-            else
-            {
-                StartCoroutine(collision.gameObject.GetComponent<Player>().Die());
-                arrow_sprite.enabled = false;
-            }
+            Destroy(gameObject);
         }
+        
         else if (collision.gameObject.GetComponent<Turret>() == null)
         {
             Destroy(gameObject);
