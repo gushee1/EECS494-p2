@@ -27,7 +27,8 @@ public class Fire : MonoBehaviour
             if (overlapping_colliders[i].GetComponent<Burnable>() != null)
             {
                 //Debug.Log("above object is burnable");
-                Destroy(overlapping_colliders[i].gameObject, 1f);
+                overlapping_colliders[i].GetComponent<Burnable>().CatchFire();
+                //Destroy(overlapping_colliders[i].gameObject, 1f);
             }
             else if (overlapping_colliders[i].GetComponent<TorchTrigger>() != null)
             {

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Water : MonoBehaviour
 {
+    public GameObject soil;
+
     private Rigidbody rb;
 
     private float fire_speed = 3f;
@@ -19,7 +21,11 @@ public class Water : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if ( UnderTree() ) 
+        { 
+            Instantiate( soil );
+            Destroy( gameObject );
+        }
     }
 
 
@@ -36,5 +42,24 @@ public class Water : MonoBehaviour
         {
             Destroy(gameObject);
         }    
+    }
+
+    private bool UnderTree()
+    {
+        Collider[] trees = Physics.OverlapBox(
+            gameObject.GetComponent<Collider>().bounds.center,
+            gameObject.GetComponent<Collider>().bounds.extents,
+            Quaternion.identity
+        );
+
+        foreach ( Collider t in trees )
+        {
+            if ( t.gameObject.GetComponent<Burnable>() != null )
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

@@ -7,7 +7,7 @@ public class Arrow : MonoBehaviour
     private Rigidbody rb;
     private SpriteRenderer arrow_sprite;
 
-    private float speed = 2f;
+    private float speed = 3f;
 
     //TODO: use eventbus for death events
 

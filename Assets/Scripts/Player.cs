@@ -29,6 +29,8 @@ public class Player : MonoBehaviour
     [SerializeField] private bool is_active = false;
     private bool just_activated = false;
 
+    private Vector3 player_spawn_point;
+
     public enum Direction
     {
         left, right, up, down
@@ -48,6 +50,8 @@ public class Player : MonoBehaviour
         player_collider = GetComponent<Collider>();
 
         player_died_subscription = EventBus.Subscribe<PlayerDiedEvent>(_OnPlayerDied);
+
+        player_spawn_point = gameObject.transform.position;
 
         player_cam.enabled = false;
     }
@@ -89,6 +93,15 @@ public class Player : MonoBehaviour
 
     void Move()
     {
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            player_speed = 5;
+        }
+        else
+        {
+            player_speed = 3;
+        }
+
         float horizontal_movement = 0;
         float vertical_movement = 0;
         if (Input.GetKey(KeyCode.LeftArrow))
@@ -176,7 +189,11 @@ public class Player : MonoBehaviour
     {
         player_cam.enabled = true;
         just_activated = true;
-        player_animator.enabled = true;
+
+        if(GetComponent<EarthAbility>() == null || !GetComponent<EarthAbility>().IsActive())
+        {
+            player_animator.enabled = true;
+        }
     }
 
     public void DeactivateSelf()
@@ -201,13 +218,12 @@ public class Player : MonoBehaviour
         rb.velocity = Vector3.zero;
         player_animator.SetBool("moving", false);
         player_animator.enabled = false;
-        player_collider.enabled = false;
         player_sprite.sprite = dead;
 
         yield return new WaitForSeconds(1f);
 
-        Debug.Log("huh");
-
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        gameObject.transform.position = player_spawn_point;
+        is_active = true;
+        player_animator.enabled = true;
     }
 }
