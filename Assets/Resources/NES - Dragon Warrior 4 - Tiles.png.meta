@@ -488,7 +488,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -496,6 +496,27 @@ TextureImporter:
       bones: []
       spriteID: 4b8e2bff4eab7f54a8aa4604eb080e4f
       internalID: -655895940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Dragon Warrior 4 - Tiles_18
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 343
+        width: 3
+        height: 3
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45ece10705fe7fa4bb451be53f78a15b
+      internalID: -1720145472
       vertices: []
       indices: 
       edges: []
@@ -521,6 +542,7 @@ TextureImporter:
       NES - Dragon Warrior 4 - Tiles_15: -1820088796
       NES - Dragon Warrior 4 - Tiles_16: 1513043739
       NES - Dragon Warrior 4 - Tiles_17: -655895940
+      NES - Dragon Warrior 4 - Tiles_18: -1720145472
       NES - Dragon Warrior 4 - Tiles_2: 1732556903
       NES - Dragon Warrior 4 - Tiles_3: 700416752
       NES - Dragon Warrior 4 - Tiles_4: -1621001051

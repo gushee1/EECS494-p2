@@ -4,17 +4,26 @@ using UnityEngine;
 
 public class Fire : MonoBehaviour
 {
+    public bool invincible = false;
+
     private Collider fire_collider;
+    private AudioSource fire_audio;
 
     // Start is called before the first frame update
     void Start()
     {
         fire_collider = GetComponent<Collider>();
+        fire_audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if ( fire_collider == null )
+        {
+            return;
+        }
+
         Collider[] overlapping_colliders = Physics.OverlapBox(
             fire_collider.bounds.center,
             fire_collider.bounds.extents,

@@ -6,12 +6,18 @@ public class TorchTrigger : MonoBehaviour
 {
     public GameObject object_to_create;
 
-    public SpriteRenderer activated_sprite;
+    public GameObject activated_state;
+
+    private AudioSource torch_audio;
+
+    public AudioClip activated;
+
+    private bool triggered = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        torch_audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -22,7 +28,13 @@ public class TorchTrigger : MonoBehaviour
 
     public void ActivateTrigger()
     {
-        activated_sprite.enabled = true;
-        object_to_create.SetActive(true);
+        if (!triggered)
+        {
+            torch_audio.PlayOneShot(activated);
+            activated_state.SetActive(true);
+            object_to_create.SetActive(true);
+            triggered = true;
+        }
+        
     }
 }

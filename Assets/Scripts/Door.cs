@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 public class Door : MonoBehaviour
 {
     private Collider door_collider;
+    private AudioSource door_audio;
+
+    public AudioClip door_locked;
+    public AudioClip door_unlocked;
 
     public PlayerManager player_manager;
 
@@ -13,6 +17,7 @@ public class Door : MonoBehaviour
     void Start()
     {
         door_collider = GetComponent<Collider>();
+        door_audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -30,11 +35,12 @@ public class Door : MonoBehaviour
         {
             if (collision.gameObject.GetComponent<Player>().HasKey())
             {
+                door_audio.PlayOneShot(door_unlocked);
                 door_collider.isTrigger = true;
             }
             else
             {
-                //TODO: play locked sound
+                door_audio.PlayOneShot(door_locked);
             }
         }
     }

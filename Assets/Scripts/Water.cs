@@ -7,25 +7,28 @@ public class Water : MonoBehaviour
     public GameObject soil;
 
     private Rigidbody rb;
+    private AudioSource water_audio;
 
-    private float fire_speed = 3f;
+    public AudioClip extinguish_flame;
+
+    private float fire_speed = 4f;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        water_audio = GetComponent<AudioSource>();
 
-        rb.velocity = transform.up * fire_speed;
+        if (rb != null)
+        {
+            rb.velocity = transform.up * fire_speed;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if ( UnderTree() ) 
-        { 
-            Instantiate( soil );
-            Destroy( gameObject );
-        }
+        //deal with making soil
     }
 
 
@@ -36,10 +39,22 @@ public class Water : MonoBehaviour
         {
             //TODO: create steam
             //TODO: play sizzle sound
-            Destroy(other.gameObject);
+            if (!other.GetComponent<Fire>().invincible)
+            {
+                Destroy(other.gameObject);
+                if(water_audio != null)
+                {
+                    water_audio.PlayOneShot(extinguish_flame);
+                }
+            }
         }
         else if (other.GetComponent<Player>() == null)
         {
+            if (other.GetComponent<Bush>() != null)
+            {
+                //Debug.Log("water is hitting bush");
+                //other.GetComponent<Bush>().GrowBushes();
+            }
             Destroy(gameObject);
         }    
     }

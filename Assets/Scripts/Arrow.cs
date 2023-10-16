@@ -7,7 +7,11 @@ public class Arrow : MonoBehaviour
     private Rigidbody rb;
     private SpriteRenderer arrow_sprite;
 
+    public Sprite frozen;
+
     private float speed = 3f;
+
+    private bool is_frozen = false;
 
     //TODO: use eventbus for death events
 
@@ -35,10 +39,25 @@ public class Arrow : MonoBehaviour
             }
             Destroy(gameObject);
         }
-        
+        else if (collision.gameObject.GetComponent<Bush>() != null)
+        {
+            Destroy(collision.gameObject);
+        }
         else if (collision.gameObject.GetComponent<Turret>() == null)
         {
-            Destroy(gameObject);
+            if (!is_frozen)
+                Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.GetComponent<Ice>() != null)
+        {
+            rb.velocity = Vector3.zero;
+            rb.isKinematic = true;
+            arrow_sprite.sprite = frozen;
+            is_frozen = true;
         }
     }
 }

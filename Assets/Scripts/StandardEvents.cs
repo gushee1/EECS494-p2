@@ -21,3 +21,8 @@ public class PlayerDiedEvent
         player_id = _player_id;
     }
 }
+
+public class PlayerAddEvent
+{
+
+}

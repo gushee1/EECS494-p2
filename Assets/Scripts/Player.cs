@@ -13,7 +13,10 @@ public class Player : MonoBehaviour
     private Animator player_animator;
     private PlayerManager player_manager;
     private Collider player_collider;
+    private AudioSource player_audio;
     public Camera player_cam;
+
+    public AudioClip pickup_key;
 
     public Sprite facing_down;
     public Sprite facing_up;
@@ -28,6 +31,7 @@ public class Player : MonoBehaviour
     private bool has_key = false;
     [SerializeField] private bool is_active = false;
     private bool just_activated = false;
+    public bool invincible = false;
 
     private Vector3 player_spawn_point;
 
@@ -48,6 +52,7 @@ public class Player : MonoBehaviour
         player_manager = GetComponentInParent<PlayerManager>();
         player_cam = GetComponentInChildren<Camera>();
         player_collider = GetComponent<Collider>();
+        player_audio = GetComponent<AudioSource>();
 
         player_died_subscription = EventBus.Subscribe<PlayerDiedEvent>(_OnPlayerDied);
 
@@ -95,7 +100,8 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            player_speed = 5;
+            //may add sprinting back later
+            player_speed = 3;
         }
         else
         {
@@ -179,6 +185,7 @@ public class Player : MonoBehaviour
     public void CollectKey()
     {
         has_key = true;
+        player_audio.PlayOneShot(pickup_key);
     }
     public bool HasKey()
     {
@@ -206,7 +213,7 @@ public class Player : MonoBehaviour
 
     void _OnPlayerDied(PlayerDiedEvent e)
     {
-        if(e.player_id == player_id)
+        if(e.player_id == player_id && !invincible)
         {
             StartCoroutine(Die());
         }

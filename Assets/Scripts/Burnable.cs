@@ -7,6 +7,8 @@ public class Burnable : MonoBehaviour
 {
     public GameObject fire;
 
+    public bool invincible = false;
+
     private float sweep_radius = 1f;
 
     private bool caught_fire = false;
@@ -38,7 +40,18 @@ public class Burnable : MonoBehaviour
 
     public void CatchFire()
     {
-        Destroy(gameObject, 1.5f);
+        if (!invincible)
+            Destroy(gameObject, 1.5f);
+
+        if (GetComponent<EarthAbility>() != null)
+        {
+            StartCoroutine(GetComponent<EarthAbility>().DisableGrassMan());
+        }
+
+        if(GetComponent<TorchTrigger>() != null)
+        {
+            GetComponent<TorchTrigger>().ActivateTrigger();
+        }
     }
 
     private IEnumerator SpreadFire()
@@ -46,5 +59,10 @@ public class Burnable : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         Instantiate(fire, transform);
+    }
+
+    public void ResetFire()
+    {
+        caught_fire = false;
     }
 }

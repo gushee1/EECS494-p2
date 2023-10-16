@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class Air : MonoBehaviour
 {
-    private Collider air_collider;
     private SpriteRenderer air_sprite_renderer;
     private Rigidbody rb;
 
     public Sprite fire;
+    public Sprite ice;
 
     private float fire_speed = 2f;
 
     // Start is called before the first frame update
     void Start()
     {
-        air_collider = GetComponent<Collider>();
         air_sprite_renderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody>();
 
@@ -34,6 +33,11 @@ public class Air : MonoBehaviour
         {
             gameObject.AddComponent<Fire>();
             air_sprite_renderer.sprite = fire;
+        }
+        else if(other.GetComponent<Water>() != null)
+        {
+            gameObject.AddComponent<Ice>();
+            air_sprite_renderer.sprite = ice;
         }
         else if(other.GetComponent<FanTrigger>() != null)
         {
